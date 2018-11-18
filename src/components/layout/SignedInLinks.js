@@ -1,20 +1,20 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const SignedInLinks = () => {
     return (
         <ul className="right">
             <li>
-                <NavLink to="/">New project</NavLink>
+                <NavLink to="/create">New project</NavLink>
             </li>
             <li>
-                <NavLink to="/">Logout</NavLink>    
+                <NavLink to="/">Logout</NavLink>
             </li>
             <li>
                 <NavLink to="/" className="btn btn-floating pink lighten-1">LM</NavLink>
-            </li>                
+            </li>
         </ul>
     )
-};
+}
 
-export default SignedInLinks;
+export default SignedInLinks
