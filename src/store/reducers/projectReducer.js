@@ -20,7 +20,7 @@ const projectReducer = (state = initState, action) => {
             break;
 
         case 'CREATE_PROJECT_ERROR':
-            console.log('error when creating the project', action.err)
+            console.error('error when creating the project', action.err)
             break;
 
         default:
