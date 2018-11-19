@@ -1,16 +1,22 @@
 export const createProject = (project) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
         
-        getFirestore().collection('projects').add({
+        let projectToSave = {
             ...project,
             authorFirstName: 'Luigi',
             authorLastName: 'Maestrelli',
             auhtorId: 123456,
             createdAt: new Date()
-        }).then(() => {
+        }
+
+        getFirestore().collection('projects').add({
+            ...projectToSave
+        }).then((data) => {
+            projectToSave.id = data.id;
+
             dispatch({
                 type: 'CREATE_PROJECT',
-                project
+                projectToSave
             });
         }).catch((err) => {
             dispatch({

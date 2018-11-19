@@ -2,18 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
+//import Moment from 'react-moment';
 
 const ProjectDetails = (props) => {
     const { project } = props;
 
     if (!project) {
         return (
-            <div className="container section project-details">
-                <div className="card z-depth-0">
-                    <div className="card-content">
-                        <p>No project yet</p>
-                    </div>
-                </div>
+            <div className="container center">
+                <p>Loading project</p>
             </div>
         );
     }
@@ -32,7 +29,7 @@ const ProjectDetails = (props) => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 const mapStateToProps = (state, ownProps) => {
