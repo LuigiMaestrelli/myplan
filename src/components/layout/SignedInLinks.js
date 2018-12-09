@@ -5,6 +5,7 @@ import { signOut } from '../../store/actions/authActions'
 
 const SignedInLinks = (props) => {
 
+    //TODO: Better handle the link click to avoid refresh
     return (
         <ul className="right">
             <li>

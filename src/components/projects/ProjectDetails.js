@@ -17,7 +17,7 @@ const ProjectDetails = (props) => {
             <div className="container center">
                 <p>Loading project</p>
             </div>
-        );
+        )
     }
 
     return (
