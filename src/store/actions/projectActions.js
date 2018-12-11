@@ -1,11 +1,13 @@
 export const createProject = (project) => {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
-        
+
+        const userProfile = getState().firebase.profile;
+
         let projectToSave = {
             ...project,
-            authorFirstName: 'Luigi',
-            authorLastName: 'Maestrelli',
-            auhtorId: 123456,
+            authorFirstName: userProfile.firstName,
+            authorLastName: userProfile.lastName,
+            auhtorId: getState().firebase.auth.uid,
             createdAt: new Date()
         }
 
