@@ -7,6 +7,8 @@ import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 
+//TODO: Install materializeJS from npm and remove the JS from the public folder
+
 class App extends Component {
     render() {
         return (
