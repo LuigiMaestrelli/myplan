@@ -19,6 +19,8 @@ class CreateProject extends Component {
         e.preventDefault();
         
         this.props.createProject(this.state);
+
+        //TODO: Redirect with out refresh the page
         this.props.history.push('/');
     }
 
