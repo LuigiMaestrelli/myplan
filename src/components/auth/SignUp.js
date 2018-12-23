@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signUp } from '../../store/actions/authActions'
 
@@ -24,11 +23,6 @@ class SignUp extends Component {
     }
 
     render() {
-        //TODO: Better route security
-        if (this.props.auth.uid) {
-            return <Redirect to='/' />;
-        }
-
         const { authError } = this.props;
 
         return (
@@ -71,7 +65,6 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.firebase.auth,
         authError: state.auth.authError
     }
 }

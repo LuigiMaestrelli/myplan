@@ -6,6 +6,7 @@ import ProjectDetails from './components/projects/ProjectDetails'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
+import PrivateRoute from './components/auth/PrivateRoute'
 
 //TODO: Install materializeJS from npm and remove the JS from the public folder
 
@@ -17,11 +18,11 @@ class App extends Component {
                     <Navbar />
 
                     <Switch>
-                        <Route exact path='/' component={Dashboard} />
-                        <Route path='/project/:id' component={ProjectDetails} />
                         <Route path='/signin' component={SignIn} />
                         <Route path='/signup' component={SignUp} />
-                        <Route path='/create' component={CreateProject} />
+                        <PrivateRoute exact path='/' component={Dashboard} />
+                        <PrivateRoute path='/project/:id' component={ProjectDetails} />
+                        <PrivateRoute path='/create' component={CreateProject} />
                     </Switch>
                 </div>
             </BrowserRouter>
