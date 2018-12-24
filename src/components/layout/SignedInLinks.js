@@ -5,14 +5,19 @@ import { signOut } from '../../store/actions/authActions'
 
 const SignedInLinks = (props) => {
 
-    //TODO: Better handle the link click to avoid refresh
+    const handleSignOut = (e) => {
+        e.preventDefault();
+
+        props.signOut();
+    }
+    
     return (
         <ul className="right">
             <li>
                 <NavLink to="/create">New project</NavLink>
             </li>
             <li>
-                <a onClick={props.signOut} href="/">Logout</a>
+                <a onClick={handleSignOut} href="/">Logout</a>
             </li>
             <li>
                 <NavLink to="/" className="btn btn-floating pink lighten-1">{props.userProfile.initials}</NavLink>

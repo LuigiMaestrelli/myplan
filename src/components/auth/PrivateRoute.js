@@ -7,7 +7,7 @@ class PrivateRoute extends Component {
         const { auth } = this.props;
 
         if (!auth.uid) {
-            return <Redirect to='/signin' />;
+            return <Redirect to='/signin' />
         }
 
         return <Route {...this.props} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { createProject } from '../../store/actions/projectActions'
 import { connect } from 'react-redux'
-
+  
 class CreateProject extends Component {
     state = {
         title: '',
@@ -16,10 +16,7 @@ class CreateProject extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
-        this.props.createProject(this.state);
 
-        //TODO: Redirect with out refresh the page
         this.props.history.push('/');
     }
 
