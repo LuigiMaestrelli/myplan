@@ -8,8 +8,6 @@ import SignUp from './components/auth/SignUp'
 import CreateProject from './components/projects/CreateProject'
 import PrivateRoute from './components/auth/PrivateRoute'
 
-//TODO: Install materializeJS from npm and remove the JS from the public folder
-
 class App extends Component {
     render() {
         return (
